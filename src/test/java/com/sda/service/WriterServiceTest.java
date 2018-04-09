@@ -36,7 +36,7 @@ public class WriterServiceTest {
     }
 
     @Test
-    public void testBlankName(){
+    public void testEmptyName(){
         //given
         String name = "";
 
@@ -55,5 +55,17 @@ public class WriterServiceTest {
         String result = writerService.write(name);
 
         Assert.assertEquals("HELLO, " + name + "!", result);
+    }
+
+    @Test
+    public void testBlankName(){
+        //given
+        String name = "     ";
+
+        //when
+        String result = writerService.write(name);
+
+        //then
+        Assert.assertEquals("Hello, my friend.", result);
     }
 }
