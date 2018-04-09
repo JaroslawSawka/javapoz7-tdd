@@ -23,7 +23,7 @@ public class WriterServiceTest {
         String result = writerService.write(name);
 
         //then
-        Assert.assertEquals("Hello Jarek.", result);
+        Assert.assertEquals("Hello, Jarek.", result);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class WriterServiceTest {
 
         String result = writerService.write(name);
 
-        Assert.assertEquals("Hello my friend.", result);
+        Assert.assertEquals("Hello, my friend.", result);
     }
 
     @Test
@@ -41,6 +41,6 @@ public class WriterServiceTest {
 
         String result = writerService.write(name);
 
-        Assert.assertEquals("HELLO " + name + ".", result);
+        Assert.assertEquals("HELLO, " + name + "!", result);
     }
 }
