@@ -1,5 +1,7 @@
 package com.sda.service;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class WriterService {
     public String write(String name){
         return prefix(name) + content(name) + suffix(name);
@@ -12,7 +14,7 @@ public class WriterService {
     }
 
     private String content(String name) {
-        return name == null ? "my friend": name;
+        return StringUtils.isEmpty(name) ? "my friend": name;
     }
 
     private String suffix(String name) {
@@ -20,6 +22,6 @@ public class WriterService {
     }
 
     private boolean isCapitalizedName(String name){
-        return name != null && name.toUpperCase().equals(name);
+        return StringUtils.isNotEmpty(name) && name.toUpperCase().equals(name);
     }
 }
