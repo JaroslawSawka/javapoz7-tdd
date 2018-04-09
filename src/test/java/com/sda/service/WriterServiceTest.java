@@ -34,4 +34,13 @@ public class WriterServiceTest {
 
         Assert.assertEquals("Hello my friend.", result);
     }
+
+    @Test
+    public void testCapitalize(){
+        String name = "JAREK";
+
+        String result = writerService.write(name);
+
+        Assert.assertEquals("HELLO " + name + ".", result);
+    }
 }
